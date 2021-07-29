@@ -3,12 +3,22 @@
 """
 Created on Wed Jul 28 19:08:50 2021
 
-@author: vazquez
+@author: L.I.Vazquez Salazar
 """
 
-
+import argparse
 from openbabel import pybel
 import os
+
+parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+parser._action_groups.pop()
+required = parser.add_argument_group("required arguments")
+required.add_argument("-i", "--input",   type=str,   help="input xyz",  required=True)
+required.add_argument("-o", "--output",  type=str,   help="output name", required=True)
+args = parser.parse_args()
+print('Your input file:', args.input)
+print('Your output file:', args.output)
+
 
 def gen_interm_zmat(infile,outfile):
     mol = next(pybel.readfile("xyz", infile)) 
@@ -57,4 +67,4 @@ def main(infile,ofile):
     print('Conversion Done, Be happy')
     
     
-main('1a.xyz','orca')
+main(args.input,args.output)
