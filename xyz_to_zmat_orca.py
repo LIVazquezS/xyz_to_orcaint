@@ -37,7 +37,7 @@ def read_zmat(file):
         dhs = [0.0,0.0,0.0,0.0]
         a1_index = [0,l2[1],l3[1]]
         a2_index = [0,0,l3[3]]
-        a3_index = [0,0,0,0]
+        a3_index = [0,0,0]
         for i in range(0,natom-3):
             label, a1, r, a2, a, a3, dh = contents[5+i].split()
             labels.append(label)
