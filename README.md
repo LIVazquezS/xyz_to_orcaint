@@ -8,5 +8,6 @@ python xyz_to_zmat_orca.py -i xyz_file.xyz -o name_output
 The code will produce a .zmat file with the name_output. 
 ## To Do
 - Remove dependecy on openbabel
+- Generate input to orca automatically
 
 For questions or problems please send a mail to: luisitza.vazquezsalazar@unibas.ch
